@@ -5,11 +5,6 @@ grid = [
     for _ in range(n)
 ]
 
-answer = [ 
-    [0 for _ in range(m)]
-    for _ in range(n)
-]
-
 visited = [
     [0 for _ in range(m)]
     for _ in range(n)
@@ -36,16 +31,11 @@ def dfs(x, y) :
         next_x, next_y = x+dx, y+dy
 
         if can_go(next_x, next_y) :
-            answer[next_x][next_y] = 1
             visited[next_x][next_y] = 1
             dfs(next_x,next_y)
 
 
-answer[0][0] = 1
 visited[0][0] = 1
 dfs(0, 0)
 
-if answer[n-1][m-1] == 1 :
-    print(1)
-else :
-    print(0)
+print(visited[n-1][m-1])
