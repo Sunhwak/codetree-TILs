@@ -40,11 +40,12 @@ def dfs(x, y) :
             visited[next_x][next_y] = 1
             dfs(next_x,next_y)
 
-        if answer[n-1][m-1] == 1 :
-            return 1
-        else :
-            return 0
 
 answer[0][0] = 1
 visited[0][0] = 1
-print(dfs(0,0))
+dfs(0, 0)
+
+if answer[n-1][m-1] == 1 :
+    print(1)
+else :
+    print(0)
