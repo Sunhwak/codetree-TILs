@@ -44,7 +44,7 @@ a[n-1][m-1] = 'x'
 
 
 def can_go(x, y) :
-    if x<0 and x<=n and y<0 and y<=m :
+    if x<0 and x>=n and y<0 and y>=m :
         return False
     else :
         return a[x][y] == 1 or a[x][y] == 'x'
