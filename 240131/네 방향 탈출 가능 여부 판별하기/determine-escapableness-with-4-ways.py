@@ -44,11 +44,13 @@ a[n-1][m-1] = 'x'
 
 
 def can_go(x, y) :
-    if 0<=x<n and 0<=y<m :
+    if (x<0 and x<=n and y<0 and y<=m ) or a[x][y] == '.' :
+        return False
+    else :
         return a[x][y] == 1 or a[x][y] == 'x'
 
-def bfs() :
-    q = deque()
+q = deque()
+def bfs() : 
     while q :
         x, y = q.popleft()
 
@@ -60,8 +62,8 @@ def bfs() :
             dxs = [-1, 1, 0, 0]
             dys = [0, 0, -1, 1]
             for dx, dy in zip(dxs, dys) :
-                if can_go(x+dx, x+dy) :
-                    q.append((x+dx, x+dy))
+                if can_go(x+dx, y+dy) :
+                    q.append((x+dx, y+dy))
     return 0
 
 q.append((0,0))
