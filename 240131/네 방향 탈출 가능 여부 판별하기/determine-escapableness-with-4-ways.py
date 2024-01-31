@@ -44,13 +44,15 @@ a[n-1][m-1] = 'x'
 
 
 def can_go(x, y) :
-    if x<0 or x>=n or y<0 or y>=m :
+    if x<0 or y<0 or x>=n or y>=m :
         return False
     else :
         return a[x][y] == 1 or a[x][y] == 'x'
 
 q = deque()
 def bfs() : 
+    q = deque()
+    q.append((0,0))
     while q :
         x, y = q.popleft()
 
@@ -65,7 +67,5 @@ def bfs() :
                 if can_go(x+dx, y+dy) :
                     q.append((x+dx, y+dy))
     return 0
-
-q.append((0,0))
 
 print(bfs())
