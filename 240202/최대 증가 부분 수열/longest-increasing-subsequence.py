@@ -18,11 +18,11 @@ for i in range(1, n) :
         if dp[j] == INT_MIN :
             continue
         
-        if j + a[j] >= i :
+        if a[j] < a[i] :
             dp[i] = max(dp[i], dp[j]+1)
 
 ans = 0
 for i in range(n) :
     ans = max(ans, dp[i])
 
-print(ans)
+print(ans+1)
