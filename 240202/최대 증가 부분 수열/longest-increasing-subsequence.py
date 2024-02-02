@@ -1,6 +1,3 @@
-import sys
-INT_MIN = -sys.maxsize
-
 n = int(input())
 dp = [1] * n
 a = list(map(int, input().split()))
