@@ -17,7 +17,7 @@ def DP():
         dp[0][i] = dp[0][i-1] + a[0][i]
 
     for j in range(1, n) :
-        dp[j][0] = dp[j-1][0] + a[i][0]
+        dp[j][0] = dp[j-1][0] + a[j][0]
 
 DP()
 for i in range(1, n) :
