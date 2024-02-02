@@ -5,7 +5,7 @@ n = int(input())
 dp = [0] * (MAX_N+1)
 
 dp[0] = 1
-dp[1] = 1
+dp[1] = 0
 dp[2] = 1
 dp[3] = 1
 
