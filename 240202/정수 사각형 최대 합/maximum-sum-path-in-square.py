@@ -1,3 +1,6 @@
+import sys
+INT_MIN = -sys.maxsize
+
 n = int(input())
 
 a = [
