@@ -22,7 +22,4 @@ for i in range(1, n) :
     for j in range(1, n) :
         dp[i][j] = max(dp[i][j-1], dp[i-1][j])+ a[i][j]
         
-ans = 0
-for j in range(n) :
-    ans = max(ans, dp[n-1][j])
-print(ans)
+print(dp[n-1][n-1])
