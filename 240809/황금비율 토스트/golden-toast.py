@@ -95,6 +95,7 @@ for _ in range(m) :
             continue
         else :
             l.erase(node)
+            node = node.next
 
     else :
         _, s = tuple(order.split())
