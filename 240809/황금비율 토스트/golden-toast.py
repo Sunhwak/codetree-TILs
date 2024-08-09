@@ -91,7 +91,10 @@ for _ in range(m) :
             node = node.next
 
     elif order.startswith('D') :
-        l.erase(node)
+        if node == l.end() :
+            continue
+        else :
+            l.erase(node)
 
     else :
         _, s = tuple(order.split())
