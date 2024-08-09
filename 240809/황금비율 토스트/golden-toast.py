@@ -79,23 +79,16 @@ node = l.END
 for _ in range(m) :
     order = input()
     if order.startswith('L') :
-        if node == l.begin() :
-            continue
-        else :
+        if node != l.begin() :
             node = node.prev
 
     elif order.startswith('R') :
-        if node == l.end() :
-            continue
-        else :
+        if node != l.end() :
             node = node.next
 
     elif order.startswith('D') :
-        if node == l.end() :
-            continue
-        else :
-            l.erase(node)
-            node = node.next
+        if node != l.end() :
+            node = l.erase(node)
 
     else :
         _, s = tuple(order.split())
